@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# TODO: install rvm and latest ruby
-# TODO: install gems
-sudo gem update —system
-sudo gem update
+# Install rvm and latest ruby
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+gem install cocoapods
+gem install fastlane
+gem install rails
+gem update
