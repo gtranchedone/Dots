@@ -17,15 +17,26 @@ brew tap caskroom/versions
 
 # Install packages
 apps=(
+    appcode
     atom
+    backblaze
+    charles
     cleanmymac
     dash
     flux
     iterm2
+    firefox
     google-chrome
+    nordvpn
+    reveal
+    rubymine
     slack
+    sketch
     skype
+    sourcetree
     spotify
+    textexpander
+    tokens
     tower
     transmission
     vlc
