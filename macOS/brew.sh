@@ -1,24 +1,25 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Ask for the administrator password upfront.
 sudo -v
 
+echo "$(tput setaf 6)==>$(tput sgr0) Installing Homebrew..."
 # Check for Homebrew and install it if missing
 if test ! $(which brew)
 then
-  echo "Installing Homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+# Make sure we’re using the latest Homebrew
+brew update
 
+echo "$(tput setaf 6)==>$(tput sgr0) Adding sources to Homebrew..."
 brew tap homebrew/versions
 brew tap homebrew/dupes
 brew tap Goles/battery
 
-# Make sure we’re using the latest Homebrew
-brew update
-
+echo "$(tput setaf 6)==>$(tput sgr0) Install Homebrew formulae"
 # Upgrade any already-installed formulae
-brew upgrade --all
+brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -38,8 +39,6 @@ brew install bash-completion
 brew install zsh
 
 # Programming Languages and Development tools
-brew install rvm
-brew install nvm
 brew install python
 brew install git
 brew install mongodb
@@ -58,6 +57,7 @@ brew install ponysay
 brew install fortune
 brew install wget
 brew install wifi-password
+brew install gpg
 
 # Remove outdated versions from the cellar.
 brew cleanup
