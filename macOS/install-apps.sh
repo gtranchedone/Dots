@@ -37,7 +37,6 @@ apps=(
     spotify
     textexpander
     tokens
-    tower
     transmission
     vlc
 )
