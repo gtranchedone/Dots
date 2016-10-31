@@ -10,3 +10,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Customize oh-my-zsh
 cp $INSTALL_SCRIPT_DIRECTORY/shell/zsh/custom/* ~/.oh-my-zsh/custom
 cp $INSTALL_SCRIPT_DIRECTORY/shell/zsh/.zshrc ~/
+
+# Reload
+source ~/.zshrc
