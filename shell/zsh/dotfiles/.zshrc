@@ -20,6 +20,11 @@ ZSH_THEME="agnoster"
 DEFAULT_USER=$USER
 
 # Required for RVM
+
+if [[ -r ~/.rvm/scripts/rvm ]]; then
+    . ~/.rvm/scripts/rvm
+fi
+
 if [[ -r ~/.profile ]]; then
     . ~/.profile
 fi
