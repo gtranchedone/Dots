@@ -1,4 +1,4 @@
-plugins=(git bundler osx rake ruby colored-man-pages colorize copydir history vundle)
+plugins=(git bundler osx rake ruby colored-man-pages colorize copydir history vundle zsh-syntax-highlighting)
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -7,7 +7,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 # Path for RVM
-export PATH="$PATH:$HOME/.rvm/bin" 
+export PATH="$PATH:$HOME/.rvm/bin"
 # Path for NVM
 export NVM_DIR=$HOME/.nvm
 
@@ -21,6 +21,16 @@ DEFAULT_USER=$USER
 
 # Required for RVM
 source ~/.profile
+
+# Load aliases
+if [[ -r ~/.aliasrc ]]; then
+    . ~/.aliasrc
+fi
+
+# Load functions
+if [[ -r ~/.functionsrc ]]; then
+    . ~/.functionsrc
+fi
 
 # fortune: brew install fortune ponysay
 fortune | ponysay

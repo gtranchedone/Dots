@@ -26,3 +26,9 @@ echo "$(tput setaf 6)==>$(tput sgr0) Install dependencies"
 source $INSTALL_SCRIPT_DIRECTORY/macOS/brew.sh
 source $INSTALL_SCRIPT_DIRECTORY/macOS/gems.sh
 source $INSTALL_SCRIPT_DIRECTORY/macOS/install-apps.sh
+
+# Install fonts for shell Theme
+pip install git+git://github.com/powerline/powerline
+
+# Finished!
+echo "$(tput setaf 6)==>$(tput sgr0) Installation complete. Please restart your Terminal."
