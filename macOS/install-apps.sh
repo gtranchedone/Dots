@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+echo "$(tput setaf 6)==>$(tput sgr0) Installing apps..."
 
 # Check for Homebrew and install it if missing
 if test ! $(which brew)
@@ -7,13 +9,6 @@ then
 fi
 
 brew tap caskroom/cask
-brew install brew-cask
-brew tap caskroom/fonts
-
-# Install Caskroom
-brew tap caskroom/cask
-brew install brew-cask
-brew tap caskroom/versions
 
 # Install packages
 apps=(

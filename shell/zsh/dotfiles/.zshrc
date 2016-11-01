@@ -33,4 +33,4 @@ if [[ -r ~/.functionsrc ]]; then
 fi
 
 # fortune: brew install fortune ponysay
-fortune | ponysay
+# fortune | ponysay
