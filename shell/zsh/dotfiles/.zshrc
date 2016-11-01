@@ -20,7 +20,9 @@ ZSH_THEME="agnoster"
 DEFAULT_USER=$USER
 
 # Required for RVM
-source ~/.profile
+if [[ -r ~/.profile ]]; then
+    . ~/.profile
+fi
 
 # Load aliases
 if [[ -r ~/.aliasrc ]]; then
