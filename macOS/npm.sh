@@ -15,6 +15,9 @@
 
 if test ! $(which nvm)
 then
+  echo "Installing Node Version Manager"
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
   echo "Installing a stable version of Node..."
 
   # Install the latest stable version of node
@@ -40,6 +43,7 @@ npm config set save-exact = true
 # git-open — Type `git open` to open the GitHub page or website for a repository
 packages=(
     diff-so-fancy
+    git-recall
     git-recent
     git-open
     gulp
@@ -54,4 +58,5 @@ packages=(
     yo
 )
 
+npm update
 npm install -g "${packages[@]}"

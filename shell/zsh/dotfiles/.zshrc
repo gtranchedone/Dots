@@ -4,7 +4,7 @@ export TERM="xterm-256color"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/Gianluca/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -17,32 +17,24 @@ DEFAULT_USER=$USER
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(extract git node npm)
 
 # Load oh-my-sh
 source $ZSH/oh-my-zsh.sh
 
-# Path for RVM
+# RVM Support
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Required for RVM
 if [[ -r ~/.rvm/scripts/rvm ]]; then
-    . ~/.rvm/scripts/rvm
+  . ~/.rvm/scripts/rvm
 fi
 
-if [[ -r ~/.profile ]]; then
-    . ~/.profile
+# Fastlane autocomplete
+
+if [[ -r ~/.fastlane/completions/completion.sh ]]; then
+  . ~/.fastlane/completions/completion.sh
 fi
 
-# Load aliases
-if [[ -r ~/.aliasrc ]]; then
-  . ~/.aliasrc
-fi
 
-# Load functions
-if [[ -r ~/.functionsrc ]]; then
-  . ~/.functionsrc
-fi
-
-# fortune: brew install fortune ponysay
-# fortune | ponysay
+export NVM_DIR="/Users/Gianluca/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

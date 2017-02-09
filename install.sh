@@ -33,6 +33,7 @@ run_script $INSTALL_SCRIPT_DIRECTORY/macOS/update-defaults.sh
 echo "$(tput setaf 6)==>$(tput sgr0) Install dependencies"
 run_script $INSTALL_SCRIPT_DIRECTORY/macOS/brew.sh
 run_script $INSTALL_SCRIPT_DIRECTORY/macOS/gems.sh
+run_script $INSTALL_SCRIPT_DIRECTORY/macOS/npm.sh
 run_script $INSTALL_SCRIPT_DIRECTORY/macOS/install-apps.sh
 
 # Install fonts for shell Theme

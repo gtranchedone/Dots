@@ -5,6 +5,7 @@ echo "$(tput setaf 6)==>$(tput sgr0) Update macOS defaults..."
 echo "$(tput setaf 6)==>$(tput sgr0) Show the ~/Library folder"
 chflags nohidden ~/Library
 
+# TODO: not working
 echo "$(tput setaf 6)==>$(tput sgr0) Show battery percentage"
 defaults write com.apple.menuextra.battery ShowPercent -bool true
 
@@ -21,6 +22,7 @@ echo "$(tput setaf 6)==>$(tput sgr0) Require password immediately after sleep or
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
+# TODO: not working properly
 echo "$(tput setaf 6)==>$(tput sgr0) Trackpad: enable tap to click for this user and for the login screen"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -30,9 +32,11 @@ sudo defaults write com.apple.AppleMultitouchTrackpad Clicking 1
 echo "$(tput setaf 6)==>$(tput sgr0) Use scroll gesture with the Ctrl (^) modifier key to zoom"
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 
+# TODO: add hide Time Machine from Toolbar
 echo "$(tput setaf 6)==>$(tput sgr0) Prevent Time Machine from prompting to use new hard drives as backup volume"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
+# TODO: not working
 echo "$(tput setaf 6)==>$(tput sgr0) Disable the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
@@ -143,11 +147,10 @@ echo "$(tput setaf 6)==>$(tput sgr0) Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
 # Disable and kill Dashboard
-# Can be reverted with:
-# defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Doc
 defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
 
-# # Always open everything in Finder's column view. This is important.
+# TODO: Always open everything in Finder's icon view. This is important.
+# TODO: also sort by kind and cleanup by name
 # defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
 echo "$(tput setaf 6)==>$(tput sgr0) Expand print panel by default"
