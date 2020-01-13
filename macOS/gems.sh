@@ -20,4 +20,4 @@ gem install rails
 echo "$(tput setaf 6)==>$(tput sgr0) Cleanup old rubies"
 rvm cleanup all
 gem update
-gem cleanup --dryrun
+gem cleanup

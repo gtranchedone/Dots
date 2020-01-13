@@ -8,35 +8,52 @@ then
   sh brew.sh
 fi
 
-brew tap caskroom/cask
-
-# Install packages
+# Install non App Store apps
 apps=(
-    appcode
-    atom
-    backblaze
-    charles
-    cleanmymac
-    dash
-    flux
-    iterm2
-    firefox
-    google-chrome
-    nordvpn
-    reveal
-    rubymine
-    slack
-    sketch
-    skype
-    sourcetree
-    spotify
-    textexpander
-    tokens
-    transmission
-    vlc
+  # Screen Saver
+  aerial
+  # Essensials
+  expressvpn
+  brave-browser
+  google-chrome
+  firefox
+  notion
+  spotify
+  cleanmymac
+  fantastical
+  google-backup-and-sync
+  # Development
+  iterm2
+  visual-studio-code
+  sourcetree
+  charles
+  docker
+  postman
+  # Design
+  sketch
+  skyfonts
+  abstract
+  zeplin
+  # Others
+  transmission
+  vlc
+  skype
+  whatsapp
+  discord
+  kindle
+  deckset
+  caffeine
+  # Blockchain
+  keybase
+  ledger-live
 )
 
 brew cask install "${apps[@]}"
+brew cask upgrade
+
+# Install Fronts
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
 
 # Install Mac App Store utility
 brew install mas
@@ -50,39 +67,27 @@ mas update
 mas upgrade
 
 # Install Mac App Store Apps
+
 # Essentials
+mas install 443987910 # 1Password
+mas install 406056744 # Evernote
+mas install 904280696 # Things 3
 mas install 457622435 # Yoink
-mas install 867299399 # OmniFocus
-mas install 425424353 # The Unarchiver
 mas install 568494494 # Pocket
 mas install 803453959 # Slack
-mas install 406056744 # Evernote
-mas install 443987910 # 1Password
+mas install 425424353 # The Unarchiver
+mas install 931657367 # Calcbot
+mas install 1179623856 # Pastebot
 
 # Developer Tools
-mas install 455484422 # Liya
 mas install 497799835 # Xcode
-mas install 587512244 # Kaleidoscope
-mas install 507135296 # IconKit
-mas install 641027709 # Color Picker
-mas install 933436921 # Smart Resizer
+mas install 455484422 # Liya
 mas install 475333727 # LocalizableStringsMerge
-mas install 1007457278 # Realm Browser
 
-# Apple Tools
-mas install 409201541 # Pages
-mas install 409203825 # Numbers
-mas install 409183694 # Keynote
-mas install 408981434 # iMovie
-mas install 682658836 # GarageBand
-mas install 490152466 # iBooks Author
+# Design Tools
+mas install 407963104 # Pixelmator
 
 # Others
-mas install 1090488118 # Gemini 2
-mas install 789738094 # Scribe
-mas install 847496013 # Deckset
-mas install 557168941 # Tweetbot
-mas install 402398561 # MindNode Pro
-mas install 711830901 # OmniGraffle
-mas install 710575188 # QuickCast
-mas install 660234210 # Smart Converter Pro 2
+mas install 1384080005 # Tweetbot
+mas install 1289197285 # MindNode
+mas install 1449412482 # Reeder 4

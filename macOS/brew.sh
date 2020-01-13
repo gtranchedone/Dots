@@ -10,7 +10,7 @@ then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 # Make sure we’re using the latest Homebrew
-brew update
+brew update-reset && brew update
 
 echo "$(tput setaf 6)==>$(tput sgr0) Adding sources to Homebrew..."
 brew tap homebrew/versions
@@ -39,9 +39,12 @@ brew install bash-completion
 brew install zsh
 
 # Programming Languages and Development tools
-brew install python
 brew install git
+brew install sql
+brew install mysql
+brew install sqlite
 brew install mongodb
+brew install python
 brew install source-highlight
 
 # Install more recent versions of some OS X tools.
@@ -58,6 +61,7 @@ brew install fortune
 brew install wget
 brew install wifi-password
 brew install gpg
+brew install youtube-dl
 
 # Remove outdated versions from the cellar.
 brew cleanup
