@@ -9,7 +9,7 @@ export ZSH=/Users/Gianluca/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="super-simple"
+ZSH_THEME="cobalt2"
 # Default user for theme
 DEFAULT_USER=$USER
 
@@ -17,7 +17,8 @@ DEFAULT_USER=$USER
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(extract git node npm)
+plugins=(extract git node npm zsh-syntax-highlighting)
+plugins+=(zsh-nvm)
 
 # Load oh-my-sh
 source $ZSH/oh-my-zsh.sh
@@ -26,7 +27,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/.rvm/bin"
 
 if [[ -r ~/.rvm/scripts/rvm ]]; then
-  . ~/.rvm/scripts/rvm
 fi
 
 # Fastlane autocomplete
@@ -35,6 +35,19 @@ if [[ -r ~/.fastlane/completions/completion.sh ]]; then
   . ~/.fastlane/completions/completion.sh
 fi
 
-
 export NVM_DIR="/Users/Gianluca/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+   export GPG_AGENT_INFO
+else
+   eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+fi
+
+# source "/Users/Gianluca/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

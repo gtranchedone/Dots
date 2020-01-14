@@ -10,8 +10,8 @@ echo "$(tput setaf 6)==>$(tput sgr0) Install oh-my-zsh..."
 curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 # Customize shell
 echo "$(tput setaf 6)==>$(tput sgr0) Install dotfiles and oh-my-zsh cutomizations..."
+cp -a $INSTALL_SCRIPT_DIRECTORY/assets/super-simple.zsh-theme ~/.oh-my-zsh/themes
 cp -a $INSTALL_SCRIPT_DIRECTORY/shell/zsh/oh-my-zsh-custom/. ~/.oh-my-zsh/custom
-cp -a $INSTALL_SCRIPT_DIRECTORY/shell/zsh/dotfiles/. ~/
-cp $INSTALL_SCRIPT_DIRECTORY/assets/super-simple.zsh-theme ~/.oh-my-zsh/themes
+cp -a $INSTALL_SCRIPT_DIRECTORY/shell/dotfiles/. ~/
 # Reload
 source ~/.zshrc

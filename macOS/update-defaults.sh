@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# TODO: review the following
+
 echo "$(tput setaf 6)==>$(tput sgr0) Update macOS defaults..."
 
 echo "$(tput setaf 6)==>$(tput sgr0) Show the ~/Library folder"
@@ -88,7 +90,7 @@ echo "$(tput setaf 6)==>$(tput sgr0) Transmission"
 
 echo "$(tput setaf 6)==>$(tput sgr0) Use '~/Documents/Torrents' to store incomplete downloads"
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Torrents"
 
 echo "$(tput setaf 6)==>$(tput sgr0) Don’t prompt for confirmation before downloading"
 defaults write org.m0k.transmission DownloadAsk -bool false

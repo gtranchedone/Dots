@@ -1,0 +1,25 @@
+[user]
+	email = g.tranchedone@gmail.com
+	name = Gianluca Tranchedone
+[core]
+	excludesfile = /Users/Gianluca/.gitignore_global
+	editor = /usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/Gianluca/.stCommitMsg
+	gpgsign = false
+[credential]
+	helper = osxkeychain
+[merge]
+	tool = opendiff
+[diff]
+	tool = opendiff
+[color]
+	ui = true
+[format]
+        pretty = format:%C(bold yellow)%h%Creset %an <%ae> %C(cyan)%s%Creset
