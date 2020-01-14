@@ -137,9 +137,12 @@ echo "$(tput setaf 6)==>$(tput sgr0) Screen"
 #  10: Put display to sleep
 #  11: Launchpad
 #  12: Notification Center
-echo "$(tput setaf 6)==>$(tput sgr0) Set lower-left hot corner to put display on sleep"
+echo "$(tput setaf 6)==>$(tput sgr0) Set hot corners"
 defaults write com.apple.dock wvous-bl-corner -int 10
 defaults write com.apple.dock wvous-bl-modifier -int 0
+
+defaults write com.apple.dock wvous-br-corner -int 5
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Finder
 # ======
